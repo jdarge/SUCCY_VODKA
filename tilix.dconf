@@ -1,0 +1,87 @@
+[/]
+app-title=''
+auto-hide-mouse=true
+control-scroll-zoom=true
+paste-strip-trailing-whitespace=false
+prompt-on-close=false
+prompt-on-close-process=false
+prompt-on-delete-profile=false
+quake-specific-monitor=0
+session-name=''
+window-style='disable-csd-hide-toolbar'
+
+[profiles]
+default='ec53a06f-9dee-467f-9522-683e362b01fb'
+list=['2b7c4080-0ddd-46c5-8f23-563fd3ba789d', 'ec53a06f-9dee-467f-9522-683e362b01fb']
+
+[profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
+background-color='#1E1E1E'
+background-transparency-percent=0
+badge-color-set=false
+bold-color-set=false
+cursor-blink-mode='system'
+cursor-colors-set=false
+cursor-shape='block'
+default-size-columns=80
+foreground-color='#A7A7A7'
+highlight-colors-set=false
+palette=['#000000', '#CC0000', '#4D9A05', '#C3A000', '#3464A3', '#754F7B', '#05979A', '#D3D6CF', '#545652', '#EF2828', '#89E234', '#FBE84F', '#729ECF', '#AC7EA8', '#34E2E2', '#EDEDEB']
+terminal-title=''
+use-theme-colors=true
+visible-name='Default'
+
+[profiles/ec53a06f-9dee-467f-9522-683e362b01fb]
+allow-bold=true
+automatic-switch=@as []
+background-color='#101010101010'
+background-transparency-percent=3
+backspace-binding='ascii-delete'
+badge-color='#ffffff'
+badge-color-set=false
+badge-font='Monospace 12'
+badge-position='northeast'
+badge-text=''
+badge-use-system-font=true
+bold-color='#ffffff'
+bold-color-set=false
+bold-is-bright=true
+cell-height-scale=1.0
+cjk-utf8-ambiguous-width='narrow'
+cursor-background-color='#000000'
+cursor-blink-mode='system'
+cursor-colors-set=false
+cursor-foreground-color='#ECEC2929AAAA'
+cursor-shape='underline'
+custom-command='neofetch'
+custom-hyperlinks=@as []
+default-size-columns=85
+delete-binding='delete-sequence'
+dim-transparency-percent=0
+draw-margin=80
+encoding='UTF-8'
+exit-action='hold'
+font='Hack Nerd Font 13'
+foreground-color='#DEDEDDDDDADA'
+highlight-background-color='#000000'
+highlight-colors-set=false
+highlight-foreground-color='#ffffff'
+login-shell=false
+notify-silence-enabled=false
+notify-silence-threshold=0
+palette=['#272822', '#EAEA2E2E8282', '#A6E22E', '#FFFF0000E9E9', '#66D9EF', '#EAEA2E2E8282', '#A1EFE4', '#F8F8F2', '#75715E', '#ECEC2929AAAA', '#A6E22E', '#1C1C7171D8D8', '#66D9EF', '#F6F65757E5E5', '#A1EFE4', '#F9F8F5']
+rewrap-on-resize=true
+scroll-on-keystroke=true
+scroll-on-output=false
+scrollback-lines=8192
+scrollback-unlimited=false
+select-by-word-chars='-,./?%&#:_'
+shortcut='disabled'
+show-scrollbar=true
+terminal-bell='none'
+terminal-title='M A R S'
+text-blink-mode='always'
+triggers=@as []
+use-custom-command=false
+use-system-font=false
+use-theme-colors=false
+visible-name='M A R S'
