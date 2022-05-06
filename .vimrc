@@ -1,3 +1,5 @@
+" alt: SpaceVim
+
 " plugins
 let need_to_install_plugins = 0
 if empty(glob('~/.vim/autoload/plug.vim'))
