@@ -102,10 +102,6 @@ alias lt='exa -aT --color=always --group-directories-first --icons' # tree listi
 alias l.="exa -a | egrep '^\.'"                                     # show only dotfiles
 alias ip="ip -color"
 
-# Replace some more things with better alternatives
-alias cat='bat --style header --style rules --style snip --style changes --style header'
-[ ! -x /usr/bin/yay ] && [ -x /usr/bin/paru ] && alias yay='paru'
-
 # Common use
 alias grubup="sudo update-grub"
 alias fixpacman="sudo rm /var/lib/pacman/db.lck"
@@ -130,26 +126,17 @@ alias hw='hwinfo --short'                                   # Hardware Info
 alias big="expac -H M '%m\t%n' | sort -h | nl"              # Sort installed packages according to size in MB
 alias gitpkg='pacman -Q | grep -i "\-git" | wc -l'			# List amount of -git packages
 
+alias chess='chromium https://chess.com/play'
+
 # Get fastest mirrors
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
 alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
 alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
 alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
 
-# Cleanup orphaned packages
 alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
-
-# Get the error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
-
-# Recent installed packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
-
-
-## Run neofetch if session is interactive
-# if status --is-interactive && type -q neofetch
-#    neofetch
-# end
 
 # MEME
 alias cdz="jp2a ~/meme.jpg --colors" 
@@ -160,3 +147,23 @@ alias pacmangame="cd ~ && ./pacman.c/build/pacman"
 alias brutaldoom="cd ~ && gzdoom -file brutal.pk3"
 alias tetris="cd ~ && ./tetris/tetris"
 alias minecraft="java -jar ~/tlauncher/TLauncher-2.841.jar"
+
+#UTILITY
+alias move="mv"
+alias copy="cp"
+
+alias desktop="cd ~/Desktop/ && clear && ls"
+alias home="cd ~/ && clear && ls"
+alias doc="cd ~/Documents && clear && ls"
+
+alias tmpmain="printf '#include <stdio.h>\n#include stdlib.h>\n#include <string.h>\n#include <unistd.h>\n\nint main(void) {\n\n}' >> ~/Desktop/tmp/main.c"
+alias tmpmake="printf 'run: main.c\n\t\$(CC) -o run main.c\n' >> ~/Desktop/tmp/Makefile"
+alias tmpc="mkdir ~/Desktop/tmp && cd ~/Desktop/tmp && tmpmain && tmpmake && ls"
+alias tmpd="rm -r ~/Desktop/tmp && cd ~/Desktop"
+alias tmp="cd ~/Desktop/tmp && ls"
+
+alias clean="sudo bleachbit -c --preset"
+alias github="firefox github.com/jdarge"
+
+export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+export PATH="$PATH:$GEM_HOME/bin"
