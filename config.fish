@@ -156,7 +156,7 @@ alias desktop="cd ~/Desktop/ && clear && ls"
 alias home="cd ~/ && clear && ls"
 alias doc="cd ~/Documents && clear && ls"
 
-alias tmpmain="printf '#include <stdio.h>\n#include stdlib.h>\n#include <string.h>\n#include <unistd.h>\n\nint main(void) {\n\n}' >> ~/Desktop/tmp/main.c"
+alias tmpmain="printf '#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <unistd.h>\n\nint main(void) {\n\t\n}' >> ~/Desktop/tmp/main.c"
 alias tmpmake="printf 'run: main.c\n\t\$(CC) -o run main.c\n' >> ~/Desktop/tmp/Makefile"
 alias tmpc="mkdir ~/Desktop/tmp && cd ~/Desktop/tmp && tmpmain && tmpmake && ls"
 alias tmpd="rm -r ~/Desktop/tmp && cd ~/Desktop"
