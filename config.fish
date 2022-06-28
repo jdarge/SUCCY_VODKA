@@ -1,5 +1,3 @@
-# ~/.config/fish/config.fish
-
 ## Set values
 # Hide welcome message
 set fish_greeting
@@ -8,7 +6,7 @@ set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 ## Export variable need for qt-theme
 if type "qtile" >> /dev/null 2>&1
-   set -x QT_QPA_PLATFORMTHEME "qt5ct"
+   set -x QT_QPA_PLATFORMTHEME "qt5ct":q
 end
 
 # Set settings for https://github.com/franciscolourenco/done
@@ -55,6 +53,10 @@ function __history_previous_command
     commandline -i !
   end
 end
+
+# This function is run every time fish displays a new prompt.
+#function fish_prompt
+#end
 
 function __history_previous_command_arguments
   switch (commandline -t)
@@ -128,8 +130,6 @@ alias hw='hwinfo --short'                                   # Hardware Info
 alias big="expac -H M '%m\t%n' | sort -h | nl"              # Sort installed packages according to size in MB
 alias gitpkg='pacman -Q | grep -i "\-git" | wc -l'			# List amount of -git packages
 
-alias chess='chromium https://chess.com/play'
-
 # Get fastest mirrors
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
 alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
@@ -141,23 +141,19 @@ alias jctl="journalctl -p 3 -xb"
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 
 # MEME
-alias cdz="jp2a ~/meme.jpg --colors" 
 alias fuckoff="sudo shutdown -n now"
 alias brb="reboot"
-alias ethan="echo can ligma \nballs \ && cdz"
-alias pacmangame="cd ~ && ./pacman.c/build/pacman"
 alias brutaldoom="cd ~ && gzdoom -file brutal.pk3"
-alias tetris="cd ~ && ./tetris/tetris"
 alias minecraft="java -jar ~/tlauncher/TLauncher-2.841.jar"
 
 #UTILITY
 alias move="mv"
 alias copy="cp"
 
-alias desktop="cd ~/Desktop/ && clear && ls"
-alias home="cd ~/ && clear && ls"
-alias doc="cd ~/Documents && clear && ls"
-alias downloads="cd ~/Downloads && clear && ls"
+alias [desktop]="cd ~/Desktop/ && ls"
+alias [home]="cd ~/ && ls"
+alias [documents]="cd ~/Documents && ls"
+alias [downloads]="cd ~/Downloads && ls"
 
 alias tmpmain="printf '#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <unistd.h>\n\nint main(void) {\n\n}' >> ~/Desktop/tmp/main.c"
 alias tmpmake="printf 'run: main.c\n\t\$(CC) -o run main.c\n' >> ~/Desktop/tmp/Makefile"
@@ -166,7 +162,10 @@ alias tmpd="rm -r ~/Desktop/tmp && cd ~/Desktop"
 alias tmp="cd ~/Desktop/tmp && ls"
 
 alias clean="sudo bleachbit -c --preset"
-alias github="firefox github.com/jdarge"
+alias neofetch="neofetch --ascii_distro archlinux"
 
-export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
-export PATH="$PATH:$GEM_HOME/bin"
+export PATH="$HOME/.emacs.d/bin:$PATH"
+alias emacs="emacsclient -c -a 'emacs'"
+
+alias pacmanspace="pacman -Qi | egrep '^(Name|Installed)' | cut -f2 -d':' | paste - - | column -t | sort -nrk 2 | grep MiB | bat"
+alias systemstatus="systemctl status sshd | bat --color==always  && systemctl status tor | bat --color=always"
