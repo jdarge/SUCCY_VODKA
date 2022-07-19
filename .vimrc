@@ -30,7 +30,8 @@ set t_Co=256
 set t_ut=
 
 syntax on
-set relativenumber
+set number relativenumber
+set nu rnu
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
